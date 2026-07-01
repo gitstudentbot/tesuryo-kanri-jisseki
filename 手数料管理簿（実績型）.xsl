@@ -328,778 +328,1364 @@
 									</fo:table-cell>
 								</fo:table-row>
 								<!--１行目-->
-								<fo:table-row height="11mm">
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											↓
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block>
-                      <fo:table width="100%" table-layout="fixed">
-                        <fo:table-body>
-                          <fo:table-row>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(Sales.U_FE1EB6A16DA180C8684C14862B97FE, '/')"/> <!--徴収年月日２-->
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>年</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(substring-after(Sales.U_FE1EB6A16DA180C8684C14862B97FE, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>月</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-after(substring-after(Sales.U_FE1EB6A16DA180C8684C14862B97FE, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>日</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-										<!--手数料の種類2-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_0FDD4F35389F6EC23D74FDB72E1CEF"/> <!--手数料(徴収済み1)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--第二種特別加入2-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base"> 
-										<fo:block text-align="center">
-											<!--賃金等2-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base"> 
-										<fo:block text-align="center">
-											<!--手数料割合等2-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base"> 
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_6BBFF6D160B5FFAF01AEF3457AA36F"/> <!--手数料額(未徴収)1-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_7365364FAD833294011B332432096A"/> <!--備考2-->
-										</fo:block>
-									</fo:table-cell>
-								</fo:table-row>
+								<xsl:if test="Sales.U_FE1EB6A16DA180C8684C14862B97FE != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+												<fo:table width="100%" table-layout="fixed">
+													<fo:table-body>
+														<fo:table-row>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(Sales.U_FE1EB6A16DA180C8684C14862B97FE, '/')"/> <!--徴収年月日２-->
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>年</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(substring-after(Sales.U_FE1EB6A16DA180C8684C14862B97FE, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>月</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-after(substring-after(Sales.U_FE1EB6A16DA180C8684C14862B97FE, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>日</fo:block>
+															</fo:table-cell>
+														</fo:table-row>
+													</fo:table-body>
+												</fo:table>
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類２-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_0FDD4F35389F6EC23D74FDB72E1CEF"/> <!--手数料(徴収済み1)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/>	<!--第二種特別加入2-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base"> 
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/>	<!--賃金等2-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base"> 
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_4235A759575918B9AE12FF0B5EB863"/>	<!--手数料割合等2-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base"> 
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6BBFF6D160B5FFAF01AEF3457AA36F"/> <!--手数料額(未徴収)1-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_7365364FAD833294011B332432096A"/> <!--備考2-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
+
 								<!--２行目-->
-								<fo:table-row height="11mm">
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											↓
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block>
-                      <fo:table width="100%" table-layout="fixed">
-                        <fo:table-body>
-                          <fo:table-row>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(Sales.U_BE64B9FAE596157EFB068D30EF8A93, '/')"/> <!--徴収年月日３-->
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>年</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(substring-after(Sales.U_BE64B9FAE596157EFB068D30EF8A93, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>月</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-after(substring-after(Sales.U_BE64B9FAE596157EFB068D30EF8A93, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>日</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料の種類3-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_F8FF157C641754197FFD5299270F97"/> <!--手数料(徴収済み2)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--第二種特別加入3-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--賃金等3-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料割合等3-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_EDE6E643DFA4C3E0E56253EBFD4008"/> <!--手数料額(未徴収2)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_E877C2228A68824FE6794CA0666ACD"/> <!--備考3-->
-										</fo:block>
-									</fo:table-cell>
-								</fo:table-row>
+								<xsl:if test="Sales.U_BE64B9FAE596157EFB068D30EF8A93 !=''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+                     	 <fo:table width="100%" table-layout="fixed">
+                       	 <fo:table-body>
+                        	  <fo:table-row>
+                         	   <fo:table-cell text-align="center">
+                          	    <fo:block>
+                            	    <xsl:value-of select="substring-before(Sales.U_BE64B9FAE596157EFB068D30EF8A93, '/')"/> <!--徴収年月日３-->
+                            	  </fo:block>
+                          	  </fo:table-cell>
+                        	    <fo:table-cell text-align="center">
+                          	    <fo:block>年</fo:block>
+                          	  </fo:table-cell>
+                           	 <fo:table-cell text-align="center">
+                           	   <fo:block>
+                           	     <xsl:value-of select="substring-before(substring-after(Sales.U_BE64B9FAE596157EFB068D30EF8A93, '/'), '/')"/>
+                           	   </fo:block>
+                           	 </fo:table-cell>
+                           	 <fo:table-cell text-align="center">
+                           	   <fo:block>月</fo:block>
+                           	 </fo:table-cell>
+                           	 <fo:table-cell text-align="center">
+                           	   <fo:block>
+                           	     <xsl:value-of select="substring-after(substring-after(Sales.U_BE64B9FAE596157EFB068D30EF8A93, '/'), '/')"/>
+                           	   </fo:block>
+                          	  </fo:table-cell>
+                          	  <fo:table-cell text-align="center">
+                          	    <fo:block>日</fo:block>
+                          	  </fo:table-cell>
+                          	</fo:table-row>
+               	         </fo:table-body>
+               	       </fo:table>
+                	    </fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類3-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_F8FF157C641754197FFD5299270F97"/> <!--手数料(徴収済み2)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入3-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等3-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_4235A759575918B9AE12FF0B5EB863"/><!--手数料割合等3-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_EDE6E643DFA4C3E0E56253EBFD4008"/> <!--手数料額(未徴収2)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_E877C2228A68824FE6794CA0666ACD"/> <!--備考3-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
+
 								<!--３行目-->
-								<fo:table-row height="11mm">
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											↓
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block>
-                      <fo:table width="100%" table-layout="fixed">
-                        <fo:table-body>
-                          <fo:table-row>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(Sales.U_4489DD0DB78903A8B552867490EBBD, '/')"/> <!--徴収年月日4-->
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>年</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(substring-after(Sales.U_4489DD0DB78903A8B552867490EBBD, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>月</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-after(substring-after(Sales.U_4489DD0DB78903A8B552867490EBBD, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>日</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料の種類4-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_D40F5A8F74DEEF2806040A17CF9F84"/> <!--手数料(徴収済み3)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--第二種特別加入4-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--賃金等4-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料割合等4-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_3B205F8A3831F5E50327D9D8079B69"/><!--手数料額(未徴収３)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_3675E99302B090629207593572541C"/><!--備考4-->
-										</fo:block>
-									</fo:table-cell>
-								</fo:table-row>
+								<xsl:if test="Sales.U_4489DD0DB78903A8B552867490EBBD != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+												<fo:table width="100%" table-layout="fixed">
+													<fo:table-body>
+														<fo:table-row>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(Sales.U_4489DD0DB78903A8B552867490EBBD, '/')"/> <!--徴収年月日4-->
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>年</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(substring-after(Sales.U_4489DD0DB78903A8B552867490EBBD, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>月</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-after(substring-after(Sales.U_4489DD0DB78903A8B552867490EBBD, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>日</fo:block>
+															</fo:table-cell>
+														</fo:table-row>
+													</fo:table-body>
+												</fo:table>
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類4-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_D40F5A8F74DEEF2806040A17CF9F84"/> <!--手数料(徴収済み3)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入4-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等4-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_4235A759575918B9AE12FF0B5EB863"/><!--手数料割合等4-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_3B205F8A3831F5E50327D9D8079B69"/><!--手数料額(未徴収３)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_3675E99302B090629207593572541C"/><!--備考4-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
+
 								<!--4行目-->
-								<fo:table-row height="11mm">
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											↓
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block>
-                      <fo:table width="100%" table-layout="fixed">
-                        <fo:table-body>
-                          <fo:table-row>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(Sales.U_00743CCFB954FCEAAE7F0703EEBE05, '/')"/> <!--徴収年月日5-->
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>年</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(substring-after(Sales.U_00743CCFB954FCEAAE7F0703EEBE05, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>月</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-after(substring-after(Sales.U_00743CCFB954FCEAAE7F0703EEBE05, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>日</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料の種類5-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_8CBB70A9C56C566243C1F36D079666"/> <!--手数料(徴収済み4)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--第二種特別加入5-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--賃金等5-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--賃金割合等5-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_A7B1C784027F47AFB9FF5270CDD776"/> <!--手数料額(未徴収4)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_618CCE516875A5860A3F903B8BB3DC"/> <!--備考５-->
-										</fo:block>
-									</fo:table-cell>
-								</fo:table-row>
+								<xsl:if test="Sales.U_00743CCFB954FCEAAE7F0703EEBE05 != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+												<fo:table width="100%" table-layout="fixed">
+													<fo:table-body>
+														<fo:table-row>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(Sales.U_00743CCFB954FCEAAE7F0703EEBE05, '/')"/> <!--徴収年月日5-->
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>年</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(substring-after(Sales.U_00743CCFB954FCEAAE7F0703EEBE05, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>月</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-after(substring-after(Sales.U_00743CCFB954FCEAAE7F0703EEBE05, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>日</fo:block>
+															</fo:table-cell>
+														</fo:table-row>
+													</fo:table-body>
+												</fo:table>
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類5-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_8CBB70A9C56C566243C1F36D079666"/> <!--手数料(徴収済み4)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入5-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等5-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_4235A759575918B9AE12FF0B5EB863"/><!--手数料割合等5-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_A7B1C784027F47AFB9FF5270CDD776"/> <!--手数料額(未徴収4)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_618CCE516875A5860A3F903B8BB3DC"/> <!--備考５-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
+
 								<!--5行目-->
-								<fo:table-row height="11mm">
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											↓
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block>
-                      <fo:table width="100%" table-layout="fixed">
-                        <fo:table-body>
-                          <fo:table-row>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(Sales.U_40B755E23AC594A96132365116A30B, '/')"/> <!--徴収年月日6-->
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>年</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(substring-after(Sales.U_40B755E23AC594A96132365116A30B, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>月</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-after(substring-after(Sales.U_40B755E23AC594A96132365116A30B, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>日</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料の種類6-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_99450C4063375BB7CECF5ACF366685"/> <!--手数料(徴収済み5)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--第二種特別加入6-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--賃金等6-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料割合等６-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_CF917758D53811ED680C45CA0D2B59"/> <!--手数料額(未徴収5)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_A41E396822E3A5DF873CF7DBE5999A"/> <!--備考６-->
-										</fo:block>
-									</fo:table-cell>
-								</fo:table-row>
+								<xsl:if test="Sales.U_40B755E23AC594A96132365116A30B != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+												<fo:table width="100%" table-layout="fixed">
+													<fo:table-body>
+														<fo:table-row>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(Sales.U_40B755E23AC594A96132365116A30B, '/')"/> <!--徴収年月日6-->
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>年</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(substring-after(Sales.U_40B755E23AC594A96132365116A30B, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>月</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-after(substring-after(Sales.U_40B755E23AC594A96132365116A30B, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>日</fo:block>
+															</fo:table-cell>
+														</fo:table-row>
+													</fo:table-body>
+												</fo:table>
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類6-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_99450C4063375BB7CECF5ACF366685"/> <!--手数料(徴収済み5)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入6-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等6-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_A7B1C784027F47AFB9FF5270CDD776"/> <!--手数料割合等６-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_CF917758D53811ED680C45CA0D2B59"/> <!--手数料額(未徴収5)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_A41E396822E3A5DF873CF7DBE5999A"/> <!--備考６-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
+
 								<!--６行目-->
-								<fo:table-row height="11mm">
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											↓
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block>
-                      <fo:table width="100%" table-layout="fixed">
-                        <fo:table-body>
-                          <fo:table-row>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(Sales.U_EECA980068CBDCF3D018AFE3CC9847, '/')"/> <!--徴収年月日7-->
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>年</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(substring-after(Sales.U_EECA980068CBDCF3D018AFE3CC9847, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>月</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-after(substring-after(Sales.U_EECA980068CBDCF3D018AFE3CC9847, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>日</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料の種類７-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_E797958312B5E5B11730AC458DD64D"/> <!--手数料(徴収済み６)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--第二種特別加入７-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--賃金等7-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料割合等7-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_148078DA8B1DA2C4E15B715E21F847"/> <!--手数料額(未徴収6)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_118073E03CE6BBBA1094B917C8FC41"/> <!--備考７-->
-										</fo:block>
-									</fo:table-cell>
-								</fo:table-row>
+								<xsl:if test="Sales.U_EECA980068CBDCF3D018AFE3CC9847 != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+												<fo:table width="100%" table-layout="fixed">
+													<fo:table-body>
+														<fo:table-row>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(Sales.U_EECA980068CBDCF3D018AFE3CC9847, '/')"/> <!--徴収年月日7-->
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>年</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(substring-after(Sales.U_EECA980068CBDCF3D018AFE3CC9847, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>月</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-after(substring-after(Sales.U_EECA980068CBDCF3D018AFE3CC9847, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>日</fo:block>
+															</fo:table-cell>
+														</fo:table-row>
+													</fo:table-body>
+												</fo:table>
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類７-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_E797958312B5E5B11730AC458DD64D"/> <!--手数料(徴収済み６)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入７-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等7-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_A7B1C784027F47AFB9FF5270CDD776"/><!--手数料割合等7-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_148078DA8B1DA2C4E15B715E21F847"/> <!--手数料額(未徴収6)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_118073E03CE6BBBA1094B917C8FC41"/> <!--備考７-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
+
 								<!--7行目-->
-								<fo:table-row height="11mm">
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											↓
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block>
-                      <fo:table width="100%" table-layout="fixed">
-                        <fo:table-body>
-                          <fo:table-row>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(Sales.U_7AE65A349CC613F8942905C6E4138E, '/')"/> <!--徴収年月日８-->
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>年</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(substring-after(Sales.U_7AE65A349CC613F8942905C6E4138E, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>月</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-after(substring-after(Sales.U_7AE65A349CC613F8942905C6E4138E, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>日</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料の種類8-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_31FDD68C0B4E84C81112912A154000"/> <!--手数料(徴収済み7)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--第二種特別加入８-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--賃金等８-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料の割合等８-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_D3B88FDC668AF8265525F5F17039E6"/>	<!--手数料額(未徴収7)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_879C9436096EC6725C1195E0BCAB4E"/> <!--備考8-->
-										</fo:block>
-									</fo:table-cell>
-								</fo:table-row>
+								<xsl:if test="Sales.U_7AE65A349CC613F8942905C6E4138E != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+												<fo:table width="100%" table-layout="fixed">
+													<fo:table-body>
+														<fo:table-row>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(Sales.U_7AE65A349CC613F8942905C6E4138E, '/')"/> <!--徴収年月日８-->
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>年</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(substring-after(Sales.U_7AE65A349CC613F8942905C6E4138E, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>月</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-after(substring-after(Sales.U_7AE65A349CC613F8942905C6E4138E, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>日</fo:block>
+															</fo:table-cell>
+														</fo:table-row>
+													</fo:table-body>
+												</fo:table>
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類8-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_31FDD68C0B4E84C81112912A154000"/> <!--手数料(徴収済み7)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入８-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等８-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_A7B1C784027F47AFB9FF5270CDD776"/><!--手数料の割合等８-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_D3B88FDC668AF8265525F5F17039E6"/>	<!--手数料額(未徴収7)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_879C9436096EC6725C1195E0BCAB4E"/> <!--備考8-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
+
 								<!--８行目-->
-								<fo:table-row height="11mm">
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											↓
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block>
-                      <fo:table width="100%" table-layout="fixed">
-                        <fo:table-body>
-                          <fo:table-row>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(Sales.U_0C09A0BC82E0FEFB781D843BDA0661, '/')"/> <!--徴収年月日９-->
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>年</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(substring-after(Sales.U_0C09A0BC82E0FEFB781D843BDA0661, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>月</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-after(substring-after(Sales.U_0C09A0BC82E0FEFB781D843BDA0661, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>日</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料の種類９-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_01C1A2FF0DF62F0FB6BEB6DD531859"/> <!--手数料(徴収済み8)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--第二種特別加入9-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--賃金等９-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料割合等９-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_00BA6F8BDFBEA94C59E955EF5AC835"/> <!--手数料額(未徴収8)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_DF015D8BCED841573AAB57626CB295"/> <!--備考９-->
-										</fo:block>
-									</fo:table-cell>
-								</fo:table-row>
+								<xsl:if test="Sales.U_0C09A0BC82E0FEFB781D843BDA0661 != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+												<fo:table width="100%" table-layout="fixed">
+													<fo:table-body>
+														<fo:table-row>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(Sales.U_0C09A0BC82E0FEFB781D843BDA0661, '/')"/> <!--徴収年月日９-->
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>年</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(substring-after(Sales.U_0C09A0BC82E0FEFB781D843BDA0661, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>月</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-after(substring-after(Sales.U_0C09A0BC82E0FEFB781D843BDA0661, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>日</fo:block>
+															</fo:table-cell>
+														</fo:table-row>
+													</fo:table-body>
+												</fo:table>
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類９-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_01C1A2FF0DF62F0FB6BEB6DD531859"/> <!--手数料(徴収済み8)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入9-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等９-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_A7B1C784027F47AFB9FF5270CDD776"/><!--手数料割合等９-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_00BA6F8BDFBEA94C59E955EF5AC835"/> <!--手数料額(未徴収8)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_DF015D8BCED841573AAB57626CB295"/> <!--備考９-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
+
 								<!--９行目-->
-								<fo:table-row height="11mm">
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											↓
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block>
-                      <fo:table width="100%" table-layout="fixed">
-                        <fo:table-body>
-                          <fo:table-row>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(Sales.U_CF938C57B95AFE1ADFA733D3219EA6, '/')"/> <!--徴収年月日１０-->
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>年</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(substring-after(Sales.U_CF938C57B95AFE1ADFA733D3219EA6, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>月</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-after(substring-after(Sales.U_CF938C57B95AFE1ADFA733D3219EA6, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>日</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料の種類10-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_24D5EF1469C2F6BED695A2C15BB430"/> <!--手数料(徴収済み9)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--第二種特別加入１０-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--賃金等１０-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<!--手数料割合等１０-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_F80BDC1E77774FA7B88A884CB6DFE9"/> <!--手数料額(未徴収9)-->
-										</fo:block>
-									</fo:table-cell>
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-											<xsl:value-of select="Sales.U_A2BFE150A3592E3DCCAE01EA3A0FDF"/> <!--備考１０-->
-										</fo:block>
-									</fo:table-cell>
-								</fo:table-row>
+								<xsl:if test="Sales.U_CF938C57B95AFE1ADFA733D3219EA6 != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+												<fo:table width="100%" table-layout="fixed">
+													<fo:table-body>
+														<fo:table-row>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(Sales.U_CF938C57B95AFE1ADFA733D3219EA6, '/')"/> <!--徴収年月日１０-->
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>年</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(substring-after(Sales.U_CF938C57B95AFE1ADFA733D3219EA6, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>月</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-after(substring-after(Sales.U_CF938C57B95AFE1ADFA733D3219EA6, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>日</fo:block>
+															</fo:table-cell>
+														</fo:table-row>
+													</fo:table-body>
+												</fo:table>
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類10-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_24D5EF1469C2F6BED695A2C15BB430"/> <!--手数料(徴収済み9)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入１０-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等１０-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_A7B1C784027F47AFB9FF5270CDD776"/><!--手数料割合等１０-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_F80BDC1E77774FA7B88A884CB6DFE9"/> <!--手数料額(未徴収9)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_A2BFE150A3592E3DCCAE01EA3A0FDF"/> <!--備考１０-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
+
 								<!--１０行目-->
-								<fo:table-row height="11mm">
+								<xsl:if test="Sales.U_7109D51BF09938D60005D26BB5FB50 != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+													<fo:table width="100%" table-layout="fixed">
+														<fo:table-body>
+															<fo:table-row>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-before(Sales.U_7109D51BF09938D60005D26BB5FB50, '/')"/> <!--徴収年月日11-->
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>年</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-before(substring-after(Sales.U_7109D51BF09938D60005D26BB5FB50, '/'), '/')"/>
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>月</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-after(substring-after(Sales.U_7109D51BF09938D60005D26BB5FB50, '/'), '/')"/>
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>日</fo:block>
+																</fo:table-cell>
+															</fo:table-row>
+														</fo:table-body>
+													</fo:table>
+												</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類11-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_78BEB1C2322D280BA44CF57D3045F2"/> <!--手数料(徴収済み10)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入11-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等11-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_A7B1C784027F47AFB9FF5270CDD776"/><!--手数料割合等11-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_8A74B0467F3EACEB2C3BF20E1272AF"/> <!--手数料(未徴収10)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_1C39A642D9DB97BE81A0F2C586FC09"/> <!--備考１１-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
 
-									<fo:table-cell xsl:use-attribute-sets="cell-base">
-										<fo:block text-align="center">
-										↓
-									</fo:block>
-								</fo:table-cell>
-								<fo:table-cell xsl:use-attribute-sets="cell-base">
-									<fo:block>
-                      <fo:table width="100%" table-layout="fixed">
-                        <fo:table-body>
-                          <fo:table-row>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(Sales.U_7109D51BF09938D60005D26BB5FB50, '/')"/> <!--徴収年月日11-->
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>年</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-before(substring-after(Sales.U_7109D51BF09938D60005D26BB5FB50, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>月</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>
-                                <xsl:value-of select="substring-after(substring-after(Sales.U_7109D51BF09938D60005D26BB5FB50, '/'), '/')"/>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="center">
-                              <fo:block>日</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-								</fo:table-cell>
-								<fo:table-cell xsl:use-attribute-sets="cell-base">
-									<fo:block text-align="center">
-										<!--手数料の種類11-->
-									</fo:block>
-								</fo:table-cell>
-								<fo:table-cell xsl:use-attribute-sets="cell-base">
-									<fo:block text-align="center">
-										<xsl:value-of select="Sales.U_78BEB1C2322D280BA44CF57D3045F2"/> <!--手数料(徴収済み10)-->
-									</fo:block>
-								</fo:table-cell>
-								<fo:table-cell xsl:use-attribute-sets="cell-base">
-									<fo:block text-align="center">
-										<!--第二種特別加入11-->
-									</fo:block>
-								</fo:table-cell>
-								<fo:table-cell xsl:use-attribute-sets="cell-base">
-									<fo:block text-align="center">
-										<!--賃金等11-->
-									</fo:block>
-								</fo:table-cell>
-								<fo:table-cell xsl:use-attribute-sets="cell-base">
-									<fo:block text-align="center">
-										<!--手数料割合等11-->
-									</fo:block>
-								</fo:table-cell>
-								<fo:table-cell xsl:use-attribute-sets="cell-base">
-									<fo:block text-align="center">
-										<xsl:value-of select="Sales.U_8A74B0467F3EACEB2C3BF20E1272AF"/> <!--手数料(未徴収10)-->
-									</fo:block>
-								</fo:table-cell>
-								<fo:table-cell xsl:use-attribute-sets="cell-base">
-									<fo:block text-align="center">
-										<xsl:value-of select="Sales.U_1C39A642D9DB97BE81A0F2C586FC09"/>
-									</fo:block>
-								</fo:table-cell>
-							</fo:table-row>
+								<!--１１行目-->
+								<xsl:if test="Sales.U_E1EAED2D086F8DE431A39686EE6331 != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+													<fo:table width="100%" table-layout="fixed">
+														<fo:table-body>
+															<fo:table-row>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-before(Sales.U_E1EAED2D086F8DE431A39686EE6331, '/')"/> <!--徴収年月日12-->
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>年</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-before(substring-after(Sales.U_E1EAED2D086F8DE431A39686EE6331, '/'), '/')"/>
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>月</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-after(substring-after(Sales.U_E1EAED2D086F8DE431A39686EE6331, '/'), '/')"/>
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>日</fo:block>
+																</fo:table-cell>
+															</fo:table-row>
+														</fo:table-body>
+													</fo:table>
+												</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類１２-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_CE845E27F51CE9B76E501A37F24E5C"/> <!--手数料額(徴収済み11)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入12-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等12-->
+											</fo:block>	
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_A7B1C784027F47AFB9FF5270CDD776"/><!--手数料割合等12-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_D13544549F337C77F95CC81D584258"/> <!--手数料額(未徴収11)-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_A6337D1FF5942B52FCCC1F56ACAEC0"/> <!--備考１２-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
 
-								
+								<!--１２行目-->
+								<xsl:if test="Sales.U_AA2B4FDFAEFFECDFF44F46FC2D4966 != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+													<fo:table width="100%" table-layout="fixed">
+														<fo:table-body>
+															<fo:table-row>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-before(Sales.U_AA2B4FDFAEFFECDFF44F46FC2D4966, '/')"/> <!--徴収年月日13-->
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>年</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-before(substring-after(Sales.U_AA2B4FDFAEFFECDFF44F46FC2D4966, '/'), '/')"/>
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>月</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-after(substring-after(Sales.U_AA2B4FDFAEFFECDFF44F46FC2D4966, '/'), '/')"/>
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>日</fo:block>
+																</fo:table-cell>
+															</fo:table-row>
+														</fo:table-body>
+													</fo:table>
+												</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類13-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_B4874C7F6322C028646EB951F82DB4"/> <!--手数料(徴収済み)１２-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入13-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等13-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_D13544549F337C77F95CC81D584258"/><!--手数料割合等13-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_230AB533456A562DD7EE98E12AA46F"/> <!--手数料未徴収12-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_A4530FFA876219CD7AF7670F904374"/> <!--備考１３-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>	
+
+								<!--１３行目-->
+								<xsl:if test="Sales.U_A325672FEE3D9F48FB2A18B82D91DF != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+												<fo:table width="100%" table-layout="fixed">
+													<fo:table-body>
+														<fo:table-row>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(Sales.U_A325672FEE3D9F48FB2A18B82D91DF, '/')"/> <!--徴収年月日14-->
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>年</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(substring-after(Sales.U_A325672FEE3D9F48FB2A18B82D91DF, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>月</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-after(substring-after(Sales.U_A325672FEE3D9F48FB2A18B82D91DF, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>日</fo:block>
+															</fo:table-cell>
+														</fo:table-row>
+													</fo:table-body>
+												</fo:table>
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類１４-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_499FFA33D9F18D4D81B499C43B5D03"/> <!--手数料(徴収済み)13-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入14-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等14-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_D13544549F337C77F95CC81D584258"/><!--手数料割合等14-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_99CB065D2C3CA6C4E22A97C0E53006"/> <!--手数料未徴収13-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_C266E03BE5143D59DEEB8327AAB978"/> <!--備考１４-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
+
+								<!--１４行目-->
+								<xsl:if test="Sales.U_CEA1950C732E22A4FF6B48C7655558 != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+													<fo:table width="100%" table-layout="fixed">
+														<fo:table-body>
+															<fo:table-row>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-before(Sales.U_CEA1950C732E22A4FF6B48C7655558, '/')"/> <!--徴収年月日15-->
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>年</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-before(substring-after(Sales.U_CEA1950C732E22A4FF6B48C7655558, '/'), '/')"/>
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>月</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-after(substring-after(Sales.U_CEA1950C732E22A4FF6B48C7655558, '/'), '/')"/>
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>日</fo:block>
+																</fo:table-cell>
+															</fo:table-row>
+														</fo:table-body>
+													</fo:table>
+												</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類15-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_D33C2B9F04BD43ACF99F6F3367DD58"/> <!--手数料徴収済み14-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種加入15-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等15-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_D13544549F337C77F95CC81D584258"/><!--手数料割合等15-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_671819460887F54D2FAB723A2038DA"/> <!--手数料未徴収１４-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_03ABD792C669559F7467252DAF2C53"/> <!--備考１５-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
+
+								<!--１5行目-->
+								<xsl:if test="Sales.U_46A825633933B0CDD3D8A767860DBE != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+													<fo:table width="100%" table-layout="fixed">
+														<fo:table-body>
+															<fo:table-row>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-before(Sales.U_46A825633933B0CDD3D8A767860DBE, '/')"/> <!--徴収年月日16-->
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>年</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-before(substring-after(Sales.U_46A825633933B0CDD3D8A767860DBE, '/'), '/')"/>
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>月</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-after(substring-after(Sales.U_46A825633933B0CDD3D8A767860DBE, '/'), '/')"/>
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>日</fo:block>
+																</fo:table-cell>
+															</fo:table-row>
+														</fo:table-body>
+													</fo:table>
+												</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類16-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_4409E2EF904E897CE80AA33B8D6411"/> <!--手数料徴収済み15-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_D13544549F337C77F95CC81D584258"/><!--手数料割合等-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_DAB88927986172519CE02E2791431A"/> <!--手数料未徴収１５-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_84A72D30BB903D03A7E0AC982EFC40"/> <!--備考１６-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
+
+								<!--１６行目-->
+								<xsl:if test="Sales.U_EFE92E181C546A16CA5E45CC76903E != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+												<fo:table width="100%" table-layout="fixed">
+													<fo:table-body>
+														<fo:table-row>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(Sales.U_EFE92E181C546A16CA5E45CC76903E, '/')"/> <!--徴収年月日17-->
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>年</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																	<xsl:value-of select="substring-before(substring-after(Sales.U_EFE92E181C546A16CA5E45CC76903E, '/'), '/')"/>
+																</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>月</fo:block>
+															</fo:table-cell>
+															<fo:table-cell text-align="center">
+																<fo:block>
+																		<xsl:value-of select="substring-after(substring-after(Sales.U_EFE92E181C546A16CA5E45CC76903E, '/'), '/')"/>
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>日</fo:block>
+																</fo:table-cell>
+															</fo:table-row>
+														</fo:table-body>
+													</fo:table>
+												</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_4939F0720A9B6A4C6981BA50FBA81E"/> <!--手数料徴収済み16-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_D13544549F337C77F95CC81D584258"/><!--手数料割合等-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_31AFE2D37BB12444FED1EDEA09D152"/> <!--手数料未徴収１６-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_FAD5F6E3E3A69BE07F27899425ABF4"/> <!--備考１７-->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
+
+								<!--１７行目-->
+								<xsl:if test="Sales.U_D853C9D7023ED5A1B1FAE395A5B1A6 != ''">
+									<fo:table-row height="11mm">
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												↓
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block>
+													<fo:table width="100%" table-layout="fixed">
+														<fo:table-body>
+															<fo:table-row>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-before(Sales.U_D853C9D7023ED5A1B1FAE395A5B1A6, '/')"/> <!--徴収年月日18-->
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>年</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-before(substring-after(Sales.U_D853C9D7023ED5A1B1FAE395A5B1A6, '/'), '/')"/>
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>月</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>
+																		<xsl:value-of select="substring-after(substring-after(Sales.U_D853C9D7023ED5A1B1FAE395A5B1A6, '/'), '/')"/>
+																	</fo:block>
+																</fo:table-cell>
+																<fo:table-cell text-align="center">
+																	<fo:block>日</fo:block>
+																</fo:table-cell>
+															</fo:table-row>
+														</fo:table-body>
+													</fo:table>
+												</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_6DD59DAC8DFC0542DEC3E04A2ABC52"/><!--手数料の種類-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_FE43176DFC9252923EC7B84C2BC804"/> <!--手数料徴収済み17-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_5C017FFB6B773724F088B6FC278A04"/><!--第二種特別加入-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_14ADBECA24673733EF4B42296F1001"/><!--賃金等-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_D13544549F337C77F95CC81D584258"/><!--手数料割合等-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_1FADE40C86F752A3677982D8A694E6"/> <!--手数料未徴収17-->
+											</fo:block>
+										</fo:table-cell>
+										<fo:table-cell xsl:use-attribute-sets="cell-base">
+											<fo:block text-align="center">
+												<xsl:value-of select="Sales.U_372518EF8CD7C2AAAF02C9F541AE3D"/> <!--備考１8 -->
+											</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:if>
 							</fo:table-body>							
 						</fo:table>
 					</fo:flow>
